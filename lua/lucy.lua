@@ -1,9 +1,9 @@
 local M = {}
-local config = require("rose-pine.config")
+local config = require("lucy.config")
 
 local function set_highlights()
-	local utilities = require("rose-pine.utilities")
-	local palette = require("rose-pine.palette")
+	local utilities = require("lucy.utilities")
+	local palette = require("lucy.palette")
 	local styles = config.options.styles
 
 	local groups = {}
@@ -22,18 +22,18 @@ local function set_highlights()
 
 	local highlights = {}
 	local legacy_highlights = {
-		["@attribute.diff"] = { fg = palette.gold },
+		["@attribute.diff"] = { fg = palette.limesicle },
 		["@boolean"] = { link = "Boolean" },
-		["@class"] = { fg = palette.foam },
+		["@class"] = { fg = palette.unnamed_blue },
 		["@conditional"] = { link = "Conditional" },
-		["@field"] = { fg = palette.foam },
+		["@field"] = { fg = palette.unnamed_blue },
 		["@include"] = { link = "Include" },
-		["@interface"] = { fg = palette.foam },
+		["@interface"] = { fg = palette.unnamed_blue },
 		["@macro"] = { link = "Macro" },
-		["@method"] = { fg = palette.rose },
+		["@method"] = { fg = palette.faff_pink },
 		["@namespace"] = { link = "Include" },
 		["@number"] = { link = "Number" },
-		["@parameter"] = { fg = palette.iris, italic = styles.italic },
+		["@parameter"] = { fg = palette.lavender, italic = styles.italic },
 		["@preproc"] = { link = "PreProc" },
 		["@punctuation"] = { fg = palette.subtle },
 		["@punctuation.bracket"] = { link = "@punctuation" },
@@ -80,7 +80,7 @@ local function set_highlights()
 	local default_highlights = {
 		ColorColumn = { bg = palette.surface },
 		Conceal = { bg = "NONE" },
-		CurSearch = { fg = palette.base, bg = palette.gold },
+		CurSearch = { fg = palette.base, bg = palette.limesicle },
 		Cursor = { fg = palette.text, bg = palette.highlight_high },
 		CursorColumn = { bg = palette.overlay },
 		-- CursorIM = {},
@@ -95,18 +95,18 @@ local function set_highlights()
 		diffAdded = { link = "DiffAdd" },
 		diffChanged = { link = "DiffChange" },
 		diffRemoved = { link = "DiffDelete" },
-		Directory = { fg = palette.foam, bold = styles.bold },
+		Directory = { fg = palette.unnamed_blue, bold = styles.bold },
 		-- EndOfBuffer = {},
 		ErrorMsg = { fg = groups.error, bold = styles.bold },
 		FloatBorder = make_border(),
-		FloatTitle = { fg = palette.foam, bg = groups.panel, bold = styles.bold },
+		FloatTitle = { fg = palette.unnamed_blue, bg = groups.panel, bold = styles.bold },
 		FoldColumn = { fg = palette.muted },
 		Folded = { fg = palette.text, bg = groups.panel },
 		IncSearch = { link = "CurSearch" },
 		LineNr = { fg = palette.muted },
-		MatchParen = { fg = palette.pine, bg = palette.pine, blend = 25 },
+		MatchParen = { fg = palette.creamsicle, bg = palette.creamsicle, blend = 25 },
 		ModeMsg = { fg = palette.subtle },
-		MoreMsg = { fg = palette.iris },
+		MoreMsg = { fg = palette.lavender },
 		NonText = { fg = palette.muted },
 		Normal = { fg = palette.text, bg = palette.base },
 		NormalFloat = { bg = groups.panel },
@@ -115,33 +115,33 @@ local function set_highlights()
 		Pmenu = { fg = palette.subtle, bg = groups.panel },
 		PmenuExtra = { fg = palette.muted, bg = groups.panel },
 		PmenuExtraSel = { fg = palette.subtle, bg = palette.overlay },
-		PmenuKind = { fg = palette.foam, bg = groups.panel },
+		PmenuKind = { fg = palette.unnamed_blue, bg = groups.panel },
 		PmenuKindSel = { fg = palette.subtle, bg = palette.overlay },
 		PmenuSbar = { bg = groups.panel },
 		PmenuSel = { fg = palette.text, bg = palette.overlay },
 		PmenuThumb = { bg = palette.muted },
-		Question = { fg = palette.gold },
+		Question = { fg = palette.limesicle },
 		-- QuickFixLink = {},
 		-- RedrawDebugNormal = {},
-		RedrawDebugClear = { fg = palette.base, bg = palette.gold },
-		RedrawDebugComposed = { fg = palette.base, bg = palette.pine },
-		RedrawDebugRecompose = { fg = palette.base, bg = palette.love },
-		Search = { fg = palette.base, bg = palette.rose },
+		RedrawDebugClear = { fg = palette.base, bg = palette.limesicle },
+		RedrawDebugComposed = { fg = palette.base, bg = palette.creamsicle },
+		RedrawDebugRecompose = { fg = palette.base, bg = palette.hot_pink },
+		Search = { fg = palette.base, bg = palette.faff_pink },
 		SignColumn = { fg = palette.text, bg = "NONE" },
-		SpecialKey = { fg = palette.foam },
+		SpecialKey = { fg = palette.unnamed_blue },
 		SpellBad = { sp = palette.subtle, undercurl = true },
 		SpellCap = { sp = palette.subtle, undercurl = true },
 		SpellLocal = { sp = palette.subtle, undercurl = true },
 		SpellRare = { sp = palette.subtle, undercurl = true },
 		StatusLine = { fg = palette.subtle, bg = groups.panel },
 		StatusLineNC = { fg = palette.muted, bg = groups.panel, blend = 60 },
-		StatusLineTerm = { fg = palette.base, bg = palette.pine },
-		StatusLineTermNC = { fg = palette.base, bg = palette.pine, blend = 60 },
+		StatusLineTerm = { fg = palette.base, bg = palette.creamsicle },
+		StatusLineTermNC = { fg = palette.base, bg = palette.creamsicle, blend = 60 },
 		Substitute = { link = "IncSearch" },
 		TabLine = { fg = palette.subtle, bg = groups.panel },
 		TabLineFill = { bg = groups.panel },
 		TabLineSel = { fg = palette.text, bg = palette.overlay, bold = styles.bold },
-		Title = { fg = palette.foam, bold = styles.bold },
+		Title = { fg = palette.unnamed_blue, bold = styles.bold },
 		VertSplit = { fg = groups.border },
 		Visual = { bg = palette.highlight_med },
 		-- VisualNOS = {},
@@ -183,52 +183,52 @@ local function set_highlights()
 		DiagnosticVirtualTextOk = { fg = groups.ok, bg = groups.ok, blend = 10 },
 		DiagnosticVirtualTextWarn = { fg = groups.warn, bg = groups.warn, blend = 10 },
 
-		Boolean = { fg = palette.rose },
-		Character = { fg = palette.gold },
+		Boolean = { fg = palette.faff_pink },
+		Character = { fg = palette.limesicle },
 		Comment = { fg = palette.subtle, italic = styles.italic },
-		Conditional = { fg = palette.pine },
-		Constant = { fg = palette.gold },
-		Debug = { fg = palette.rose },
-		Define = { fg = palette.iris },
+		Conditional = { fg = palette.creamsicle },
+		Constant = { fg = palette.limesicle },
+		Debug = { fg = palette.faff_pink },
+		Define = { fg = palette.lavender },
 		Delimiter = { fg = palette.subtle },
-		Error = { fg = palette.love },
-		Exception = { fg = palette.pine },
-		Float = { fg = palette.gold },
-		Function = { fg = palette.rose },
+		Error = { fg = palette.hot_pink },
+		Exception = { fg = palette.creamsicle },
+		Float = { fg = palette.limesicle },
+		Function = { fg = palette.faff_pink },
 		Identifier = { fg = palette.text },
-		Include = { fg = palette.pine },
-		Keyword = { fg = palette.pine },
-		Label = { fg = palette.foam },
+		Include = { fg = palette.creamsicle },
+		Keyword = { fg = palette.creamsicle },
+		Label = { fg = palette.unnamed_blue },
 		LspCodeLens = { fg = palette.subtle },
 		LspCodeLensSeparator = { fg = palette.muted },
 		LspInlayHint = { fg = palette.muted, bg = palette.muted, blend = 10 },
 		LspReferenceRead = { bg = palette.highlight_med },
 		LspReferenceText = { bg = palette.highlight_med },
 		LspReferenceWrite = { bg = palette.highlight_med },
-		Macro = { fg = palette.iris },
-		Number = { fg = palette.gold },
+		Macro = { fg = palette.lavender },
+		Number = { fg = palette.limesicle },
 		Operator = { fg = palette.subtle },
-		PreCondit = { fg = palette.iris },
+		PreCondit = { fg = palette.lavender },
 		PreProc = { link = "PreCondit" },
-		Repeat = { fg = palette.pine },
-		Special = { fg = palette.foam },
+		Repeat = { fg = palette.creamsicle },
+		Special = { fg = palette.unnamed_blue },
 		SpecialChar = { link = "Special" },
-		SpecialComment = { fg = palette.iris },
-		Statement = { fg = palette.pine, bold = styles.bold },
-		StorageClass = { fg = palette.foam },
-		String = { fg = palette.gold },
-		Structure = { fg = palette.foam },
-		Tag = { fg = palette.foam },
-		Todo = { fg = palette.rose, bg = palette.rose, blend = 20 },
-		Type = { fg = palette.foam },
+		SpecialComment = { fg = palette.lavender },
+		Statement = { fg = palette.creamsicle, bold = styles.bold },
+		StorageClass = { fg = palette.unnamed_blue },
+		String = { fg = palette.limesicle },
+		Structure = { fg = palette.unnamed_blue },
+		Tag = { fg = palette.unnamed_blue },
+		Todo = { fg = palette.faff_pink, bg = palette.faff_pink, blend = 20 },
+		Type = { fg = palette.unnamed_blue },
 		TypeDef = { link = "Type" },
-		Underlined = { fg = palette.iris, underline = true },
+		Underlined = { fg = palette.lavender, underline = true },
 
 		healthError = { fg = groups.error },
 		healthSuccess = { fg = groups.info },
 		healthWarning = { fg = groups.warn },
 
-		htmlArg = { fg = palette.iris },
+		htmlArg = { fg = palette.lavender },
 		htmlBold = { bold = styles.bold },
 		htmlEndTag = { fg = palette.subtle },
 		htmlH1 = { link = "markdownH1" },
@@ -240,7 +240,7 @@ local function set_highlights()
 		htmlLink = { link = "markdownUrl" },
 		htmlTag = { fg = palette.subtle },
 		htmlTagN = { fg = palette.text },
-		htmlTagName = { fg = palette.foam },
+		htmlTagName = { fg = palette.unnamed_blue },
 
 		markdownDelimiter = { fg = palette.subtle },
 		markdownH1 = { fg = groups.h1, bold = styles.bold },
@@ -258,12 +258,12 @@ local function set_highlights()
 		markdownLinkText = { link = "markdownUrl" },
 		markdownUrl = { fg = groups.link, sp = groups.link, underline = true },
 
-		mkdCode = { fg = palette.foam, italic = styles.italic },
-		mkdCodeDelimiter = { fg = palette.rose },
-		mkdCodeEnd = { fg = palette.foam },
-		mkdCodeStart = { fg = palette.foam },
-		mkdFootnotes = { fg = palette.foam },
-		mkdID = { fg = palette.foam, underline = true },
+		mkdCode = { fg = palette.unnamed_blue, italic = styles.italic },
+		mkdCodeDelimiter = { fg = palette.faff_pink },
+		mkdCodeEnd = { fg = palette.unnamed_blue },
+		mkdCodeStart = { fg = palette.unnamed_blue },
+		mkdFootnotes = { fg = palette.unnamed_blue },
+		mkdID = { fg = palette.unnamed_blue, underline = true },
 		mkdInlineURL = { link = "markdownUrl" },
 		mkdLink = { link = "markdownUrl" },
 		mkdLinkDef = { link = "markdownUrl" },
@@ -273,13 +273,13 @@ local function set_highlights()
 
 		--- Identifiers
 		["@variable"] = { fg = palette.text, italic = styles.italic },
-		["@variable.builtin"] = { fg = palette.love, bold = styles.bold },
-		["@variable.parameter"] = { fg = palette.iris, italic = styles.italic },
-		["@variable.member"] = { fg = palette.foam },
+		["@variable.builtin"] = { fg = palette.hot_pink, bold = styles.bold },
+		["@variable.parameter"] = { fg = palette.lavender, italic = styles.italic },
+		["@variable.member"] = { fg = palette.unnamed_blue },
 
-		["@constant"] = { fg = palette.gold },
-		["@constant.builtin"] = { fg = palette.gold, bold = styles.bold },
-		["@constant.macro"] = { fg = palette.gold },
+		["@constant"] = { fg = palette.limesicle },
+		["@constant.builtin"] = { fg = palette.limesicle, bold = styles.bold },
+		["@constant.macro"] = { fg = palette.limesicle },
 
 		["@module"] = { fg = palette.text },
 		["@module.builtin"] = { fg = palette.text, bold = styles.bold },
@@ -288,8 +288,8 @@ local function set_highlights()
 		--- Literals
 		["@string"] = { link = "String" },
 		-- ["@string.documentation"] = {},
-		["@string.regexp"] = { fg = palette.iris },
-		["@string.escape"] = { fg = palette.pine },
+		["@string.regexp"] = { fg = palette.lavender },
+		["@string.escape"] = { fg = palette.creamsicle },
 		["@string.special"] = { link = "String" },
 		["@string.special.symbol"] = { link = "Identifier" },
 		["@string.special.url"] = { fg = groups.link },
@@ -304,23 +304,23 @@ local function set_highlights()
 		["@float"] = { link = "Number" },
 
 		--- Types
-		["@type"] = { fg = palette.foam },
-		["@type.builtin"] = { fg = palette.foam, bold = styles.bold },
+		["@type"] = { fg = palette.unnamed_blue },
+		["@type.builtin"] = { fg = palette.unnamed_blue, bold = styles.bold },
 		-- ["@type.definition"] = {},
 		-- ["@type.qualifier"] = {},
 
 		-- ["@attribute"] = {},
-		["@property"] = { fg = palette.foam, italic = styles.italic },
+		["@property"] = { fg = palette.unnamed_blue, italic = styles.italic },
 
 		--- Functions
-		["@function"] = { fg = palette.rose },
-		["@function.builtin"] = { fg = palette.rose, bold = styles.bold },
+		["@function"] = { fg = palette.faff_pink },
+		["@function.builtin"] = { fg = palette.faff_pink, bold = styles.bold },
 		-- ["@function.call"] = {},
 		["@function.macro"] = { link = "Function" },
-		["@function.method"] = { fg = palette.rose },
-		["@function.method.call"] = { fg = palette.iris },
+		["@function.method"] = { fg = palette.faff_pink },
+		["@function.method.call"] = { fg = palette.lavender },
 
-		["@constructor"] = { fg = palette.foam },
+		["@constructor"] = { fg = palette.unnamed_blue },
 		["@operator"] = { link = "Operator" },
 
 		--- Keywords
@@ -328,16 +328,16 @@ local function set_highlights()
 		-- ["@keyword.coroutine"] = {},
 		-- ["@keyword.function"] = {},
 		["@keyword.operator"] = { fg = palette.subtle },
-		["@keyword.import"] = { fg = palette.pine },
-		["@keyword.storage"] = { fg = palette.foam },
-		["@keyword.repeat"] = { fg = palette.pine },
-		["@keyword.return"] = { fg = palette.pine },
-		["@keyword.debug"] = { fg = palette.rose },
-		["@keyword.exception"] = { fg = palette.pine },
-		["@keyword.conditional"] = { fg = palette.pine },
-		["@keyword.conditional.ternary"] = { fg = palette.pine },
-		["@keyword.directive"] = { fg = palette.iris },
-		["@keyword.directive.define"] = { fg = palette.iris },
+		["@keyword.import"] = { fg = palette.creamsicle },
+		["@keyword.storage"] = { fg = palette.unnamed_blue },
+		["@keyword.repeat"] = { fg = palette.creamsicle },
+		["@keyword.return"] = { fg = palette.creamsicle },
+		["@keyword.debug"] = { fg = palette.faff_pink },
+		["@keyword.exception"] = { fg = palette.creamsicle },
+		["@keyword.conditional"] = { fg = palette.creamsicle },
+		["@keyword.conditional.ternary"] = { fg = palette.creamsicle },
+		["@keyword.directive"] = { fg = palette.lavender },
+		["@keyword.directive.define"] = { fg = palette.lavender },
 
 		--- Punctuation
 		["@punctuation.delimiter"] = { fg = palette.subtle },
@@ -361,7 +361,7 @@ local function set_highlights()
 		["@markup.strikethrough"] = { strikethrough = true },
 		["@markup.underline"] = { underline = true },
 
-		["@markup.heading"] = { fg = palette.foam, bold = styles.bold },
+		["@markup.heading"] = { fg = palette.unnamed_blue, bold = styles.bold },
 
 		["@markup.quote"] = { fg = palette.text },
 		["@markup.math"] = { link = "Special" },
@@ -370,15 +370,15 @@ local function set_highlights()
 
 		-- ["@markup.link"] = {},
 		["@markup.link.markdown_inline"] = { fg = palette.subtle },
-		["@markup.link.label.markdown_inline"] = { fg = palette.foam },
+		["@markup.link.label.markdown_inline"] = { fg = palette.unnamed_blue },
 		["@markup.link.url"] = { fg = groups.link },
 
 		-- ["@markup.raw"] = { bg = palette.surface },
 		-- ["@markup.raw.block"] = { bg = palette.surface },
 		["@markup.raw.delimiter.markdown"] = { fg = palette.subtle },
 
-		["@markup.list"] = { fg = palette.pine },
-		["@markup.list.checked"] = { fg = palette.foam, bg = palette.foam, blend = 10 },
+		["@markup.list"] = { fg = palette.creamsicle },
+		["@markup.list.checked"] = { fg = palette.unnamed_blue, bg = palette.unnamed_blue, blend = 10 },
 		["@markup.list.unchecked"] = { fg = palette.text },
 
 		-- Markdown headings
@@ -400,7 +400,7 @@ local function set_highlights()
 		["@diff.delta"] = { bg = groups.git_change, blend = 20 },
 
 		["@tag"] = { link = "Tag" },
-		["@tag.attribute"] = { fg = palette.iris },
+		["@tag.attribute"] = { fg = palette.lavender },
 		["@tag.delimiter"] = { fg = palette.subtle },
 
 		--- Non-highlighting captures
@@ -435,20 +435,20 @@ local function set_highlights()
 		-- romgrk/barbar.nvim
 		BufferCurrent = { fg = palette.text, bg = palette.overlay },
 		BufferCurrentIndex = { fg = palette.text, bg = palette.overlay },
-		BufferCurrentMod = { fg = palette.foam, bg = palette.overlay },
+		BufferCurrentMod = { fg = palette.unnamed_blue, bg = palette.overlay },
 		BufferCurrentSign = { fg = palette.subtle, bg = palette.overlay },
-		BufferCurrentTarget = { fg = palette.gold, bg = palette.overlay },
+		BufferCurrentTarget = { fg = palette.limesicle, bg = palette.overlay },
 		BufferInactive = { fg = palette.subtle },
 		BufferInactiveIndex = { fg = palette.subtle },
-		BufferInactiveMod = { fg = palette.foam },
+		BufferInactiveMod = { fg = palette.unnamed_blue },
 		BufferInactiveSign = { fg = palette.muted },
-		BufferInactiveTarget = { fg = palette.gold },
+		BufferInactiveTarget = { fg = palette.limesicle },
 		BufferTabpageFill = { fg = "NONE", bg = "NONE" },
 		BufferVisible = { fg = palette.subtle },
 		BufferVisibleIndex = { fg = palette.subtle },
-		BufferVisibleMod = { fg = palette.foam },
+		BufferVisibleMod = { fg = palette.unnamed_blue },
 		BufferVisibleSign = { fg = palette.muted },
-		BufferVisibleTarget = { fg = palette.gold },
+		BufferVisibleTarget = { fg = palette.limesicle },
 
 		-- lewis6991/gitsigns.nvim
 		GitSignsAdd = { link = "SignAdd" },
@@ -459,22 +459,22 @@ local function set_highlights()
 		SignDelete = { fg = groups.git_delete, bg = "NONE" },
 
 		-- mvllow/modes.nvim
-		ModesCopy = { bg = palette.gold },
-		ModesDelete = { bg = palette.love },
-		ModesInsert = { bg = palette.foam },
-		ModesReplace = { bg = palette.pine },
-		ModesVisual = { bg = palette.iris },
+		ModesCopy = { bg = palette.limesicle },
+		ModesDelete = { bg = palette.hot_pink },
+		ModesInsert = { bg = palette.unnamed_blue },
+		ModesReplace = { bg = palette.creamsicle },
+		ModesVisual = { bg = palette.lavender },
 
 		-- kyazdani42/nvim-tree.lua
 		NvimTreeEmptyFolderName = { fg = palette.muted },
 		NvimTreeFileDeleted = { fg = groups.git_delete },
 		NvimTreeFileDirty = { fg = groups.git_dirty },
 		NvimTreeFileMerge = { fg = groups.git_merge },
-		NvimTreeFileNew = { fg = palette.foam },
+		NvimTreeFileNew = { fg = palette.unnamed_blue },
 		NvimTreeFileRenamed = { fg = groups.git_rename },
 		NvimTreeFileStaged = { fg = groups.git_stage },
 		NvimTreeFolderIcon = { fg = palette.subtle },
-		NvimTreeFolderName = { fg = palette.foam },
+		NvimTreeFolderName = { fg = palette.unnamed_blue },
 		NvimTreeGitDeleted = { fg = groups.git_delete },
 		NvimTreeGitDirty = { fg = groups.git_dirty },
 		NvimTreeGitIgnored = { fg = groups.git_ignore },
@@ -486,29 +486,29 @@ local function set_highlights()
 		NvimTreeNormal = { link = "Normal" },
 		NvimTreeOpenedFile = { fg = palette.text, bg = palette.overlay },
 		NvimTreeOpenedFolderName = { link = "NvimTreeFolderName" },
-		NvimTreeRootFolder = { fg = palette.foam, bold = styles.bold },
+		NvimTreeRootFolder = { fg = palette.unnamed_blue, bold = styles.bold },
 		NvimTreeSpecialFile = { link = "NvimTreeNormal" },
 		NvimTreeWindowPicker = { link = "StatusLineTerm" },
 
 		-- nvim-neotest/neotest
-		NeotestAdapterName = { fg = palette.iris },
+		NeotestAdapterName = { fg = palette.lavender },
 		NeotestBorder = { fg = palette.highlight_med },
-		NeotestDir = { fg = palette.foam },
+		NeotestDir = { fg = palette.unnamed_blue },
 		NeotestExpandMarker = { fg = palette.highlight_med },
-		NeotestFailed = { fg = palette.love },
+		NeotestFailed = { fg = palette.hot_pink },
 		NeotestFile = { fg = palette.text },
-		NeotestFocused = { fg = palette.gold, bg = palette.highlight_med },
+		NeotestFocused = { fg = palette.limesicle, bg = palette.highlight_med },
 		NeotestIndent = { fg = palette.highlight_med },
-		NeotestMarked = { fg = palette.rose, bold = styles.bold },
-		NeotestNamespace = { fg = palette.gold },
-		NeotestPassed = { fg = palette.pine },
-		NeotestRunning = { fg = palette.gold },
+		NeotestMarked = { fg = palette.faff_pink, bold = styles.bold },
+		NeotestNamespace = { fg = palette.limesicle },
+		NeotestPassed = { fg = palette.creamsicle },
+		NeotestRunning = { fg = palette.limesicle },
 		NeotestWinSelect = { fg = palette.muted },
 		NeotestSkipped = { fg = palette.subtle },
-		NeotestTarget = { fg = palette.love },
-		NeotestTest = { fg = palette.gold },
+		NeotestTarget = { fg = palette.hot_pink },
+		NeotestTest = { fg = palette.limesicle },
 		NeotestUnknown = { fg = palette.subtle },
-		NeotestWatching = { fg = palette.iris },
+		NeotestWatching = { fg = palette.lavender },
 
 		-- nvim-neo-tree/neo-tree.nvim
 		NeoTreeGitAdded = { fg = groups.git_add },
@@ -525,32 +525,32 @@ local function set_highlights()
 		NeoTreeTitleBar = { link = "StatusLineTerm" },
 
 		-- folke/flash.nvim
-		FlashLabel = { fg = palette.base, bg = palette.love },
+		FlashLabel = { fg = palette.base, bg = palette.hot_pink },
 
 		-- folke/which-key.nvim
-		WhichKey = { fg = palette.iris },
+		WhichKey = { fg = palette.lavender },
 		WhichKeyBorder = make_border(),
-		WhichKeyDesc = { fg = palette.gold },
+		WhichKeyDesc = { fg = palette.limesicle },
 		WhichKeyFloat = { bg = groups.panel },
-		WhichKeyGroup = { fg = palette.foam },
-		WhichKeyIcon = { fg = palette.pine },
-		WhichKeyIconAzure = { fg = palette.pine },
-		WhichKeyIconBlue = { fg = palette.pine },
-		WhichKeyIconCyan = { fg = palette.foam },
-		WhichKeyIconGreen = { fg = palette.leaf },
+		WhichKeyGroup = { fg = palette.unnamed_blue },
+		WhichKeyIcon = { fg = palette.creamsicle },
+		WhichKeyIconAzure = { fg = palette.creamsicle },
+		WhichKeyIconBlue = { fg = palette.creamsicle },
+		WhichKeyIconCyan = { fg = palette.unnamed_blue },
+		WhichKeyIconGreen = { fg = palette.lemonsicle },
 		WhichKeyIconGrey = { fg = palette.subtle },
-		WhichKeyIconOrange = { fg = palette.rose },
-		WhichKeyIconPurple = { fg = palette.iris },
-		WhichKeyIconRed = { fg = palette.love },
-		WhichKeyIconYellow = { fg = palette.gold },
+		WhichKeyIconOrange = { fg = palette.faff_pink },
+		WhichKeyIconPurple = { fg = palette.lavender },
+		WhichKeyIconRed = { fg = palette.hot_pink },
+		WhichKeyIconYellow = { fg = palette.limesicle },
 		WhichKeyNormal = { link = "NormalFloat" },
 		WhichKeySeparator = { fg = palette.subtle },
 		WhichKeyTitle = { link = "FloatTitle" },
-		WhichKeyValue = { fg = palette.rose },
+		WhichKeyValue = { fg = palette.faff_pink },
 
 		-- lukas-reineke/indent-blankline.nvim
 		IblIndent = { fg = palette.overlay },
-		IblScope = { fg = palette.foam },
+		IblScope = { fg = palette.unnamed_blue },
 		IblWhitespace = { fg = palette.overlay },
 
 		-- hrsh7th/nvim-cmp
@@ -579,7 +579,7 @@ local function set_highlights()
 		NeogitDiffAddHighlight = { link = "DiffAdd" },
 		NeogitDiffContextHighlight = { bg = palette.surface },
 		NeogitDiffDeleteHighlight = { link = "DiffDelete" },
-		NeogitFilePath = { fg = palette.foam, italic = styles.italic },
+		NeogitFilePath = { fg = palette.unnamed_blue, italic = styles.italic },
 		NeogitHunkHeader = { bg = groups.panel },
 		NeogitHunkHeaderHighlight = { bg = groups.panel },
 
@@ -593,8 +593,8 @@ local function set_highlights()
 		VimwikiHeader6 = { link = "markdownH6" },
 		VimwikiHeaderChar = { fg = palette.subtle },
 		VimwikiLink = { link = "markdownUrl" },
-		VimwikiList = { fg = palette.iris },
-		VimwikiNoExistsLink = { fg = palette.love },
+		VimwikiList = { fg = palette.lavender },
+		VimwikiNoExistsLink = { fg = palette.hot_pink },
 
 		-- nvim-neorg/neorg
 		NeorgHeading1Prefix = { link = "markdownH1Delimiter" },
@@ -609,42 +609,42 @@ local function set_highlights()
 		NeorgHeading5Title = { link = "markdownH5" },
 		NeorgHeading6Prefix = { link = "markdownH6Delimiter" },
 		NeorgHeading6Title = { link = "markdownH6" },
-		NeorgMarkerTitle = { fg = palette.foam, bold = styles.bold },
+		NeorgMarkerTitle = { fg = palette.unnamed_blue, bold = styles.bold },
 
 		-- tami5/lspsaga.nvim (fork of glepnir/lspsaga.nvim)
-		DefinitionCount = { fg = palette.rose },
-		DefinitionIcon = { fg = palette.rose },
-		DefinitionPreviewTitle = { fg = palette.rose, bold = styles.bold },
+		DefinitionCount = { fg = palette.faff_pink },
+		DefinitionIcon = { fg = palette.faff_pink },
+		DefinitionPreviewTitle = { fg = palette.faff_pink, bold = styles.bold },
 		LspFloatWinBorder = make_border(),
 		LspFloatWinNormal = { bg = groups.panel },
 		LspSagaAutoPreview = { fg = palette.subtle },
-		LspSagaCodeActionBorder = make_border(palette.rose),
-		LspSagaCodeActionContent = { fg = palette.foam },
-		LspSagaCodeActionTitle = { fg = palette.gold, bold = styles.bold },
+		LspSagaCodeActionBorder = make_border(palette.faff_pink),
+		LspSagaCodeActionContent = { fg = palette.unnamed_blue },
+		LspSagaCodeActionTitle = { fg = palette.limesicle, bold = styles.bold },
 		LspSagaCodeActionTruncateLine = { link = "LspSagaCodeActionBorder" },
 		LspSagaDefPreviewBorder = make_border(),
-		LspSagaDiagnosticBorder = make_border(palette.gold),
-		LspSagaDiagnosticHeader = { fg = palette.foam, bold = styles.bold },
+		LspSagaDiagnosticBorder = make_border(palette.limesicle),
+		LspSagaDiagnosticHeader = { fg = palette.unnamed_blue, bold = styles.bold },
 		LspSagaDiagnosticTruncateLine = { link = "LspSagaDiagnosticBorder" },
 		LspSagaDocTruncateLine = { link = "LspSagaHoverBorder" },
-		LspSagaFinderSelection = { fg = palette.gold },
+		LspSagaFinderSelection = { fg = palette.limesicle },
 		LspSagaHoverBorder = { link = "LspFloatWinBorder" },
 		LspSagaLspFinderBorder = { link = "LspFloatWinBorder" },
-		LspSagaRenameBorder = make_border(palette.pine),
-		LspSagaRenamePromptPrefix = { fg = palette.love },
+		LspSagaRenameBorder = make_border(palette.creamsicle),
+		LspSagaRenamePromptPrefix = { fg = palette.hot_pink },
 		LspSagaShTruncateLine = { link = "LspSagaSignatureHelpBorder" },
-		LspSagaSignatureHelpBorder = make_border(palette.foam),
-		ReferencesCount = { fg = palette.rose },
-		ReferencesIcon = { fg = palette.rose },
+		LspSagaSignatureHelpBorder = make_border(palette.unnamed_blue),
+		ReferencesCount = { fg = palette.faff_pink },
+		ReferencesIcon = { fg = palette.faff_pink },
 		SagaShadow = { bg = palette.overlay },
-		TargetWord = { fg = palette.iris },
+		TargetWord = { fg = palette.lavender },
 
 		-- ray-x/lsp_signature.nvim
 		LspSignatureActiveParameter = { bg = palette.overlay },
 
 		-- rlane/pounce.nvim
-		PounceAccept = { fg = palette.love, bg = palette.love, blend = 20 },
-		PounceAcceptBest = { fg = palette.gold, bg = palette.gold, blend = 20 },
+		PounceAccept = { fg = palette.hot_pink, bg = palette.hot_pink, blend = 20 },
+		PounceAcceptBest = { fg = palette.limesicle, bg = palette.limesicle, blend = 20 },
 		PounceGap = { link = "Search" },
 		PounceMatch = { link = "Search" },
 
@@ -655,20 +655,20 @@ local function set_highlights()
 
 		-- phaazon/hop.nvim
 		-- smoka7/hop.nvim
-		HopNextKey = { fg = palette.love, bg = palette.love, blend = 20 },
-		HopNextKey1 = { fg = palette.foam, bg = palette.foam, blend = 20 },
-		HopNextKey2 = { fg = palette.pine, bg = palette.pine, blend = 20 },
+		HopNextKey = { fg = palette.hot_pink, bg = palette.hot_pink, blend = 20 },
+		HopNextKey1 = { fg = palette.unnamed_blue, bg = palette.unnamed_blue, blend = 20 },
+		HopNextKey2 = { fg = palette.creamsicle, bg = palette.creamsicle, blend = 20 },
 		HopUnmatched = { fg = palette.muted },
 
 		-- nvim-telescope/telescope.nvim
 		TelescopeBorder = make_border(),
-		TelescopeMatching = { fg = palette.rose },
+		TelescopeMatching = { fg = palette.faff_pink },
 		TelescopeNormal = { link = "NormalFloat" },
 		TelescopePromptNormal = { link = "TelescopeNormal" },
 		TelescopePromptPrefix = { fg = palette.subtle },
 		TelescopeSelection = { fg = palette.text, bg = palette.overlay },
-		TelescopeSelectionCaret = { fg = palette.rose, bg = palette.overlay },
-		TelescopeTitle = { fg = palette.foam, bold = styles.bold },
+		TelescopeSelectionCaret = { fg = palette.faff_pink, bg = palette.overlay },
+		TelescopeTitle = { fg = palette.unnamed_blue, bold = styles.bold },
 
 		-- ibhagwan/fzf-lua
 		FzfLuaBorder = make_border(),
@@ -676,8 +676,8 @@ local function set_highlights()
 		FzfLuaBufFlagCur = { fg = palette.subtle },
 		FzfLuaCursorLine = { fg = palette.text, bg = palette.overlay },
 		FzfLuaFilePart = { fg = palette.text },
-		FzfLuaHeaderBind = { fg = palette.rose },
-		FzfLuaHeaderText = { fg = palette.love },
+		FzfLuaHeaderBind = { fg = palette.faff_pink },
+		FzfLuaHeaderText = { fg = palette.hot_pink },
 		FzfLuaNormal = { link = "NormalFloat" },
 		FzfLuaTitle = { link = "FloatTitle" },
 
@@ -691,67 +691,67 @@ local function set_highlights()
 		NotifyINFOBorder = make_border(groups.info),
 		NotifyINFOIcon = { link = "NotifyINFOTitle" },
 		NotifyINFOTitle = { fg = groups.info },
-		NotifyTRACEBorder = make_border(palette.iris),
+		NotifyTRACEBorder = make_border(palette.lavender),
 		NotifyTRACEIcon = { link = "NotifyTRACETitle" },
-		NotifyTRACETitle = { fg = palette.iris },
+		NotifyTRACETitle = { fg = palette.lavender },
 		NotifyWARNBorder = make_border(groups.warn),
 		NotifyWARNIcon = { link = "NotifyWARNTitle" },
 		NotifyWARNTitle = { fg = groups.warn },
 
 		-- rcarriga/nvim-dap-ui
-		DapUIBreakpointsCurrentLine = { fg = palette.gold, bold = styles.bold },
+		DapUIBreakpointsCurrentLine = { fg = palette.limesicle, bold = styles.bold },
 		DapUIBreakpointsDisabledLine = { fg = palette.muted },
 		DapUIBreakpointsInfo = { link = "DapUIThread" },
 		DapUIBreakpointsLine = { link = "DapUIBreakpointsPath" },
-		DapUIBreakpointsPath = { fg = palette.foam },
+		DapUIBreakpointsPath = { fg = palette.unnamed_blue },
 		DapUIDecoration = { link = "DapUIBreakpointsPath" },
 		DapUIFloatBorder = make_border(),
 		DapUIFrameName = { fg = palette.text },
 		DapUILineNumber = { link = "DapUIBreakpointsPath" },
-		DapUIModifiedValue = { fg = palette.foam, bold = styles.bold },
+		DapUIModifiedValue = { fg = palette.unnamed_blue, bold = styles.bold },
 		DapUIScope = { link = "DapUIBreakpointsPath" },
-		DapUISource = { fg = palette.iris },
+		DapUISource = { fg = palette.lavender },
 		DapUIStoppedThread = { link = "DapUIBreakpointsPath" },
-		DapUIThread = { fg = palette.gold },
+		DapUIThread = { fg = palette.limesicle },
 		DapUIValue = { fg = palette.text },
 		DapUIVariable = { fg = palette.text },
-		DapUIWatchesEmpty = { fg = palette.love },
+		DapUIWatchesEmpty = { fg = palette.hot_pink },
 		DapUIWatchesError = { link = "DapUIWatchesEmpty" },
 		DapUIWatchesValue = { link = "DapUIThread" },
 
 		-- glepnir/dashboard-nvim
-		DashboardCenter = { fg = palette.gold },
-		DashboardFooter = { fg = palette.iris },
-		DashboardHeader = { fg = palette.pine },
-		DashboardShortcut = { fg = palette.love },
+		DashboardCenter = { fg = palette.limesicle },
+		DashboardFooter = { fg = palette.lavender },
+		DashboardHeader = { fg = palette.creamsicle },
+		DashboardShortcut = { fg = palette.hot_pink },
 
 		-- SmiteshP/nvim-navic
-		NavicIconsArray = { fg = palette.gold },
-		NavicIconsBoolean = { fg = palette.rose },
-		NavicIconsClass = { fg = palette.foam },
-		NavicIconsConstant = { fg = palette.gold },
-		NavicIconsConstructor = { fg = palette.gold },
-		NavicIconsEnum = { fg = palette.gold },
-		NavicIconsEnumMember = { fg = palette.foam },
-		NavicIconsEvent = { fg = palette.gold },
-		NavicIconsField = { fg = palette.foam },
+		NavicIconsArray = { fg = palette.limesicle },
+		NavicIconsBoolean = { fg = palette.faff_pink },
+		NavicIconsClass = { fg = palette.unnamed_blue },
+		NavicIconsConstant = { fg = palette.limesicle },
+		NavicIconsConstructor = { fg = palette.limesicle },
+		NavicIconsEnum = { fg = palette.limesicle },
+		NavicIconsEnumMember = { fg = palette.unnamed_blue },
+		NavicIconsEvent = { fg = palette.limesicle },
+		NavicIconsField = { fg = palette.unnamed_blue },
 		NavicIconsFile = { fg = palette.muted },
-		NavicIconsFunction = { fg = palette.pine },
-		NavicIconsInterface = { fg = palette.foam },
-		NavicIconsKey = { fg = palette.iris },
-		NavicIconsKeyword = { fg = palette.pine },
-		NavicIconsMethod = { fg = palette.iris },
-		NavicIconsModule = { fg = palette.rose },
+		NavicIconsFunction = { fg = palette.creamsicle },
+		NavicIconsInterface = { fg = palette.unnamed_blue },
+		NavicIconsKey = { fg = palette.lavender },
+		NavicIconsKeyword = { fg = palette.creamsicle },
+		NavicIconsMethod = { fg = palette.lavender },
+		NavicIconsModule = { fg = palette.faff_pink },
 		NavicIconsNamespace = { fg = palette.muted },
-		NavicIconsNull = { fg = palette.love },
-		NavicIconsNumber = { fg = palette.gold },
-		NavicIconsObject = { fg = palette.gold },
+		NavicIconsNull = { fg = palette.hot_pink },
+		NavicIconsNumber = { fg = palette.limesicle },
+		NavicIconsObject = { fg = palette.limesicle },
 		NavicIconsOperator = { fg = palette.subtle },
 		NavicIconsPackage = { fg = palette.muted },
-		NavicIconsProperty = { fg = palette.foam },
-		NavicIconsString = { fg = palette.gold },
-		NavicIconsStruct = { fg = palette.foam },
-		NavicIconsTypeParameter = { fg = palette.foam },
+		NavicIconsProperty = { fg = palette.unnamed_blue },
+		NavicIconsString = { fg = palette.limesicle },
+		NavicIconsStruct = { fg = palette.unnamed_blue },
+		NavicIconsTypeParameter = { fg = palette.unnamed_blue },
 		NavicIconsVariable = { fg = palette.text },
 		NavicSeparator = { fg = palette.subtle },
 		NavicText = { fg = palette.subtle },
@@ -761,7 +761,7 @@ local function set_highlights()
 
 		-- folke/trouble.nvim
 		TroubleText = { fg = palette.subtle },
-		TroubleCount = { fg = palette.iris, bg = palette.surface },
+		TroubleCount = { fg = palette.lavender, bg = palette.surface },
 		TroubleNormal = { fg = palette.text, bg = groups.panel },
 
 		-- echasnovski/mini.nvim
@@ -807,32 +807,32 @@ local function set_highlights()
 		MiniFilesFile = { fg = palette.text },
 		MiniFilesNormal = { link = "NormalFloat" },
 		MiniFilesTitle = { link = "FloatTitle" },
-		MiniFilesTitleFocused = { fg = palette.rose, bg = groups.panel, bold = styles.bold },
+		MiniFilesTitleFocused = { fg = palette.faff_pink, bg = groups.panel, bold = styles.bold },
 
 		MiniHipatternsFixme = { fg = palette.base, bg = groups.error, bold = styles.bold },
 		MiniHipatternsHack = { fg = palette.base, bg = groups.warn, bold = styles.bold },
 		MiniHipatternsNote = { fg = palette.base, bg = groups.info, bold = styles.bold },
 		MiniHipatternsTodo = { fg = palette.base, bg = groups.hint, bold = styles.bold },
 
-		MiniIconsAzure = { fg = palette.foam },
-		MiniIconsBlue = { fg = palette.pine },
-		MiniIconsCyan = { fg = palette.foam },
-		MiniIconsGreen = { fg = palette.leaf },
+		MiniIconsAzure = { fg = palette.unnamed_blue },
+		MiniIconsBlue = { fg = palette.creamsicle },
+		MiniIconsCyan = { fg = palette.unnamed_blue },
+		MiniIconsGreen = { fg = palette.lemonsicle },
 		MiniIconsGrey = { fg = palette.subtle },
-		MiniIconsOrange = { fg = palette.rose },
-		MiniIconsPurple = { fg = palette.iris },
-		MiniIconsRed = { fg = palette.love },
-		MiniIconsYellow = { fg = palette.gold },
+		MiniIconsOrange = { fg = palette.faff_pink },
+		MiniIconsPurple = { fg = palette.lavender },
+		MiniIconsRed = { fg = palette.hot_pink },
+		MiniIconsYellow = { fg = palette.limesicle },
 
 		MiniIndentscopeSymbol = { fg = palette.muted },
-		MiniIndentscopeSymbolOff = { fg = palette.gold },
+		MiniIndentscopeSymbolOff = { fg = palette.limesicle },
 
-		MiniJump = { sp = palette.gold, undercurl = true },
+		MiniJump = { sp = palette.limesicle, undercurl = true },
 
 		MiniJump2dDim = { fg = palette.subtle },
-		MiniJump2dSpot = { fg = palette.gold, bold = styles.bold, nocombine = true },
-		MiniJump2dSpotAhead = { fg = palette.foam, bg = palette.surface, nocombine = true },
-		MiniJump2dSpotUnique = { fg = palette.rose, bold = styles.bold, nocombine = true },
+		MiniJump2dSpot = { fg = palette.limesicle, bold = styles.bold, nocombine = true },
+		MiniJump2dSpotAhead = { fg = palette.unnamed_blue, bg = palette.surface, nocombine = true },
+		MiniJump2dSpotUnique = { fg = palette.faff_pink, bold = styles.bold, nocombine = true },
 
 		MiniMapNormal = { link = "NormalFloat" },
 		MiniMapSymbolCount = { link = "Special" },
@@ -853,7 +853,7 @@ local function set_highlights()
 		MiniPickHeader = { link = "DiagnosticFloatingHint" },
 		MiniPickMatchCurrent = { link = "CursorLine" },
 		MiniPickMatchMarked = { link = "Visual" },
-		MiniPickMatchRanges = { fg = palette.foam },
+		MiniPickMatchRanges = { fg = palette.unnamed_blue },
 		MiniPickNormal = { link = "NormalFloat" },
 		MiniPickPreviewLine = { link = "CursorLine" },
 		MiniPickPreviewRegion = { link = "IncSearch" },
@@ -866,19 +866,19 @@ local function set_highlights()
 		MiniStarterItem = { link = "Normal" },
 		MiniStarterItemBullet = { link = "Delimiter" },
 		MiniStarterItemPrefix = { link = "WarningMsg" },
-		MiniStarterSection = { fg = palette.rose },
+		MiniStarterSection = { fg = palette.faff_pink },
 		MiniStarterQuery = { link = "MoreMsg" },
 
 		MiniStatuslineDevinfo = { fg = palette.subtle, bg = palette.overlay },
 		MiniStatuslineFileinfo = { link = "MiniStatuslineDevinfo" },
 		MiniStatuslineFilename = { fg = palette.muted, bg = palette.surface },
 		MiniStatuslineInactive = { link = "MiniStatuslineFilename" },
-		MiniStatuslineModeCommand = { fg = palette.base, bg = palette.love, bold = styles.bold },
-		MiniStatuslineModeInsert = { fg = palette.base, bg = palette.foam, bold = styles.bold },
-		MiniStatuslineModeNormal = { fg = palette.base, bg = palette.rose, bold = styles.bold },
-		MiniStatuslineModeOther = { fg = palette.base, bg = palette.rose, bold = styles.bold },
-		MiniStatuslineModeReplace = { fg = palette.base, bg = palette.pine, bold = styles.bold },
-		MiniStatuslineModeVisual = { fg = palette.base, bg = palette.iris, bold = styles.bold },
+		MiniStatuslineModeCommand = { fg = palette.base, bg = palette.hot_pink, bold = styles.bold },
+		MiniStatuslineModeInsert = { fg = palette.base, bg = palette.unnamed_blue, bold = styles.bold },
+		MiniStatuslineModeNormal = { fg = palette.base, bg = palette.faff_pink, bold = styles.bold },
+		MiniStatuslineModeOther = { fg = palette.base, bg = palette.faff_pink, bold = styles.bold },
+		MiniStatuslineModeReplace = { fg = palette.base, bg = palette.creamsicle, bold = styles.bold },
+		MiniStatuslineModeVisual = { fg = palette.base, bg = palette.lavender, bold = styles.bold },
 
 		MiniSurround = { link = "IncSearch" },
 
@@ -892,23 +892,23 @@ local function set_highlights()
 		MiniTablineVisible = { fg = palette.text, bg = groups.panel },
 
 		MiniTestEmphasis = { bold = styles.bold },
-		MiniTestFail = { fg = palette.love, bold = styles.bold },
-		MiniTestPass = { fg = palette.foam, bold = styles.bold },
+		MiniTestFail = { fg = palette.hot_pink, bold = styles.bold },
+		MiniTestPass = { fg = palette.unnamed_blue, bold = styles.bold },
 
-		MiniTrailspace = { bg = palette.love },
+		MiniTrailspace = { bg = palette.hot_pink },
 
 		-- goolord/alpha-nvim
-		AlphaButtons = { fg = palette.foam },
-		AlphaFooter = { fg = palette.gold },
-		AlphaHeader = { fg = palette.pine },
-		AlphaShortcut = { fg = palette.rose },
+		AlphaButtons = { fg = palette.unnamed_blue },
+		AlphaFooter = { fg = palette.limesicle },
+		AlphaHeader = { fg = palette.creamsicle },
+		AlphaShortcut = { fg = palette.faff_pink },
 
 		-- github/copilot.vim
 		CopilotSuggestion = { fg = palette.muted, italic = styles.italic },
 
 		-- nvim-treesitter/nvim-treesitter-context
 		TreesitterContext = { bg = palette.overlay },
-		TreesitterContextLineNumber = { fg = palette.rose, bg = palette.overlay },
+		TreesitterContextLineNumber = { fg = palette.faff_pink, bg = palette.overlay },
 
 		-- RRethy/vim-illuminate
 		IlluminatedWordRead = { link = "LspReferenceRead" },
@@ -916,17 +916,17 @@ local function set_highlights()
 		IlluminatedWordWrite = { link = "LspReferenceWrite" },
 
 		-- HiPhish/rainbow-delimiters.nvim
-		RainbowDelimiterBlue = { fg = palette.pine },
-		RainbowDelimiterCyan = { fg = palette.foam },
-		RainbowDelimiterGreen = { fg = palette.leaf },
-		RainbowDelimiterOrange = { fg = palette.rose },
-		RainbowDelimiterRed = { fg = palette.love },
-		RainbowDelimiterViolet = { fg = palette.iris },
-		RainbowDelimiterYellow = { fg = palette.gold },
+		RainbowDelimiterBlue = { fg = palette.creamsicle },
+		RainbowDelimiterCyan = { fg = palette.unnamed_blue },
+		RainbowDelimiterGreen = { fg = palette.lemonsicle },
+		RainbowDelimiterOrange = { fg = palette.faff_pink },
+		RainbowDelimiterRed = { fg = palette.hot_pink },
+		RainbowDelimiterViolet = { fg = palette.lavender },
+		RainbowDelimiterYellow = { fg = palette.limesicle },
 
 		-- MeanderingProgrammer/render-markdown.nvim
-		RenderMarkdownBullet = { fg = palette.rose },
-		RenderMarkdownChecked = { fg = palette.foam },
+		RenderMarkdownBullet = { fg = palette.faff_pink },
+		RenderMarkdownChecked = { fg = palette.unnamed_blue },
 		RenderMarkdownCode = { bg = palette.overlay },
 		RenderMarkdownCodeInline = { fg = palette.text, bg = palette.overlay },
 		RenderMarkdownDash = { fg = palette.muted },
@@ -943,22 +943,22 @@ local function set_highlights()
 		RenderMarkdownUnchecked = { fg = palette.subtle },
 
 		-- MagicDuck/grug-far.nvim
-		GrugFarHelpHeader = { fg = palette.pine },
-		GrugFarHelpHeaderKey = { fg = palette.gold },
-		GrugFarHelpWinActionKey = { fg = palette.gold },
-		GrugFarHelpWinActionPrefix = { fg = palette.foam },
-		GrugFarHelpWinActionText = { fg = palette.pine },
+		GrugFarHelpHeader = { fg = palette.creamsicle },
+		GrugFarHelpHeaderKey = { fg = palette.limesicle },
+		GrugFarHelpWinActionKey = { fg = palette.limesicle },
+		GrugFarHelpWinActionPrefix = { fg = palette.unnamed_blue },
+		GrugFarHelpWinActionText = { fg = palette.creamsicle },
 		GrugFarHelpWinHeader = { link = "FloatTitle" },
-		GrugFarInputLabel = { fg = palette.foam },
+		GrugFarInputLabel = { fg = palette.unnamed_blue },
 		GrugFarInputPlaceholder = { link = "Comment" },
-		GrugFarResultsActionMessage = { fg = palette.foam },
+		GrugFarResultsActionMessage = { fg = palette.unnamed_blue },
 		GrugFarResultsChangeIndicator = { fg = groups.git_change },
-		GrugFarResultsHeader = { fg = palette.pine },
-		GrugFarResultsLineNo = { fg = palette.iris },
+		GrugFarResultsHeader = { fg = palette.creamsicle },
+		GrugFarResultsLineNo = { fg = palette.lavender },
 		GrugFarResultsLineColumn = { link = "GrugFarResultsLineNo" },
 		GrugFarResultsMatch = { link = "CurSearch" },
-		GrugFarResultsPath = { fg = palette.foam },
-		GrugFarResultsStats = { fg = palette.iris },
+		GrugFarResultsPath = { fg = palette.unnamed_blue },
+		GrugFarResultsStats = { fg = palette.lavender },
 	}
 	local transparency_highlights = {
 		DiagnosticVirtualTextError = { fg = groups.error },
@@ -968,13 +968,13 @@ local function set_highlights()
 		DiagnosticVirtualTextWarn = { fg = groups.warn },
 
 		FloatBorder = { fg = palette.muted, bg = "NONE" },
-		FloatTitle = { fg = palette.foam, bg = "NONE", bold = styles.bold },
+		FloatTitle = { fg = palette.unnamed_blue, bg = "NONE", bold = styles.bold },
 		Folded = { fg = palette.text, bg = "NONE" },
 		NormalFloat = { bg = "NONE" },
 		Normal = { fg = palette.text, bg = "NONE" },
 		NormalNC = { fg = palette.text, bg = config.options.dim_inactive_windows and palette._nc or "NONE" },
 		Pmenu = { fg = palette.subtle, bg = "NONE" },
-		PmenuKind = { fg = palette.foam, bg = "NONE" },
+		PmenuKind = { fg = palette.unnamed_blue, bg = "NONE" },
 		SignColumn = { fg = palette.text, bg = "NONE" },
 		StatusLine = { fg = palette.subtle, bg = "NONE" },
 		StatusLineNC = { fg = palette.muted, bg = "NONE" },
@@ -983,25 +983,25 @@ local function set_highlights()
 		TabLineSel = { fg = palette.text, bg = "NONE", bold = styles.bold },
 
 		-- ["@markup.raw"] = { bg = "none" },
-		["@markup.raw.markdown_inline"] = { fg = palette.gold },
+		["@markup.raw.markdown_inline"] = { fg = palette.limesicle },
 		-- ["@markup.raw.block"] = { bg = "none" },
 
 		TelescopeNormal = { fg = palette.subtle, bg = "NONE" },
 		TelescopePromptNormal = { fg = palette.text, bg = "NONE" },
 		TelescopeSelection = { fg = palette.text, bg = "NONE", bold = styles.bold },
-		TelescopeSelectionCaret = { fg = palette.rose },
+		TelescopeSelectionCaret = { fg = palette.faff_pink },
 
 		WhichKeyFloat = { bg = "NONE" },
 		WhichKeyNormal = { bg = "NONE" },
 
 		IblIndent = { fg = palette.overlay, bg = "NONE" },
-		IblScope = { fg = palette.foam, bg = "NONE" },
+		IblScope = { fg = palette.unnamed_blue, bg = "NONE" },
 		IblWhitespace = { fg = palette.overlay, bg = "NONE" },
 
 		TreesitterContext = { bg = "NONE" },
-		TreesitterContextLineNumber = { fg = palette.rose, bg = "NONE" },
+		TreesitterContextLineNumber = { fg = palette.faff_pink, bg = "NONE" },
 
-		MiniFilesTitleFocused = { fg = palette.rose, bg = "NONE", bold = styles.bold },
+		MiniFilesTitleFocused = { fg = palette.faff_pink, bg = "NONE", bold = styles.bold },
 
 		MiniPickPrompt = { bg = "NONE", bold = styles.bold },
 		MiniPickBorderText = { bg = "NONE" },
@@ -1067,29 +1067,29 @@ local function set_highlights()
 	if config.options.enable.terminal then
 		vim.g.terminal_color_0 = palette.overlay -- black
 		vim.g.terminal_color_8 = palette.subtle -- bright black
-		vim.g.terminal_color_1 = palette.love -- red
-		vim.g.terminal_color_9 = palette.love -- bright red
-		vim.g.terminal_color_2 = palette.pine -- green
-		vim.g.terminal_color_10 = palette.pine -- bright green
-		vim.g.terminal_color_3 = palette.gold -- yellow
-		vim.g.terminal_color_11 = palette.gold -- bright yellow
-		vim.g.terminal_color_4 = palette.foam -- blue
-		vim.g.terminal_color_12 = palette.foam -- bright blue
-		vim.g.terminal_color_5 = palette.iris -- magenta
-		vim.g.terminal_color_13 = palette.iris -- bright magenta
-		vim.g.terminal_color_6 = palette.rose -- cyan
-		vim.g.terminal_color_14 = palette.rose -- bright cyan
+		vim.g.terminal_color_1 = palette.hot_pink -- red
+		vim.g.terminal_color_9 = palette.hot_pink -- bright red
+		vim.g.terminal_color_2 = palette.creamsicle -- green
+		vim.g.terminal_color_10 = palette.creamsicle -- bright green
+		vim.g.terminal_color_3 = palette.limesicle -- yellow
+		vim.g.terminal_color_11 = palette.limesicle -- bright yellow
+		vim.g.terminal_color_4 = palette.unnamed_blue -- blue
+		vim.g.terminal_color_12 = palette.unnamed_blue -- bright blue
+		vim.g.terminal_color_5 = palette.lavender -- magenta
+		vim.g.terminal_color_13 = palette.lavender -- bright magenta
+		vim.g.terminal_color_6 = palette.faff_pink -- cyan
+		vim.g.terminal_color_14 = palette.faff_pink -- bright cyan
 		vim.g.terminal_color_7 = palette.text -- white
 		vim.g.terminal_color_15 = palette.text -- bright white
 
 		-- Support StatusLineTerm & StatusLineTermNC from vim
 		vim.cmd([[
-		augroup rose-pine
+		augroup lucy
 			autocmd!
 			autocmd TermOpen * if &buftype=='terminal'
 				\|setlocal winhighlight=StatusLine:StatusLineTerm,StatusLineNC:StatusLineTermNC
 				\|else|setlocal winhighlight=|endif
-			autocmd ColorSchemePre * autocmd! rose-pine
+			autocmd ColorSchemePre * autocmd! lucy
 		augroup END
 		]])
 	end
@@ -1104,7 +1104,7 @@ function M.colorscheme(variant)
 		vim.cmd("hi clear")
 		vim.cmd("syntax reset")
 	end
-	vim.g.colors_name = "rose-pine"
+	vim.g.colors_name = "lucy"
 
 	set_highlights()
 end

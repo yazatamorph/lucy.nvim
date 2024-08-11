@@ -1,20 +1,19 @@
----@alias Variant "main" | "moon" | "dawn"
----@alias Palette { base: string, surface: string, overlay: string, muted: string, subtle: string, text: string, love: string, gold: string, rose: string, pine: string, foam: string, iris: string }
----@alias PaletteColor "base" | "surface" | "overlay" | "muted" | "subtle" | "text" | "love" | "gold" | "rose" | "pine" | "foam" | "iris" | "highlight_low" | "highlight_med" | "highlight_high"
+---@alias Variant "lucy"
+---@alias Palette { base: string, surface: string, overlay: string, muted: string, subtle: string, text: string, hot_pink: string, limesicle: string, faff_pink: string, creamsicle: string, unnamed_blue: string, lavender: string, lemonsicle: string }
+---@alias PaletteColor "base" | "surface" | "overlay" | "muted" | "subtle" | "text" | "hot_pink" | "limesicle" | "faff_pink" | "creamsicle" | "unnamed_blue" | "lavender" | "lemonsicle" | "highlight_low" | "highlight_med" | "highlight_high"
 ---@alias Highlight { link: string, inherit: boolean } | { fg: string, bg: string, sp: string, bold: boolean, italic: boolean, undercurl: boolean, underline: boolean, underdouble: boolean, underdotted: boolean, underdashed: boolean, strikethrough: boolean, inherit: boolean }
 
 local config = {}
 
 ---@class Options
 config.options = {
-	---Set the desired variant: "auto" will follow the vim background,
-	---defaulting to `dark_variant` or "main" for dark and "dawn" for light.
-	---@type "auto" | Variant
-	variant = "auto",
+	---There is currently only one option, may eventually add others
+	---@type "lucy" | Variant
+	variant = "lucy",
 
 	---Set the desired dark variant when `options.variant` is set to "auto".
 	---@type Variant
-	dark_variant = "main",
+	dark_variant = "lucy",
 
 	---Differentiate between active and inactive windows and panels.
 	dim_inactive_windows = false,
@@ -38,44 +37,35 @@ config.options = {
 	---@type table<string, string | PaletteColor>
 	groups = {
 		border = "muted",
-		link = "iris",
+		link = "lavender",
 		panel = "surface",
 
-		error = "love",
-		hint = "iris",
-		info = "foam",
-		ok = "leaf",
-		warn = "gold",
-		note = "pine",
-		todo = "rose",
+		error = "hot_pink",
+		hint = "lavender",
+		info = "unnamed_blue",
+		ok = "lemonsicle",
+		warn = "limesicle",
+		note = "creamsicle",
+		todo = "faff_pink",
 
-		git_add = "foam",
-		git_change = "rose",
-		git_delete = "love",
-		git_dirty = "rose",
+		git_add = "unnamed_blue",
+		git_change = "faff_pink",
+		git_delete = "hot_pink",
+		git_dirty = "faff_pink",
 		git_ignore = "muted",
-		git_merge = "iris",
-		git_rename = "pine",
-		git_stage = "iris",
-		git_text = "rose",
+		git_merge = "lavender",
+		git_rename = "creamsicle",
+		git_stage = "lavender",
+		git_text = "faff_pink",
 		git_untracked = "subtle",
 
 		---@type string | PaletteColor
-		h1 = "iris",
-		h2 = "foam",
-		h3 = "rose",
-		h4 = "gold",
-		h5 = "pine",
-		h6 = "leaf",
-
-		---@deprecated Replaced by `options.highlight_groups["Normal"]`
-		-- background = "base",
-		---@deprecated Replaced by `options.highlight_groups["Comment"]`
-		-- comment = "subtle",
-		---@deprecated Replaced by `options.highlight_groups["@punctuation"]`
-		-- punctuation = "muted",
-		---@deprecated Expects a table with values h1...h6
-		-- headings = "text",
+		h1 = "lavender",
+		h2 = "unnamed_blue",
+		h3 = "faff_pink",
+		h4 = "limesicle",
+		h5 = "creamsicle",
+		h6 = "lemonsicle",
 	},
 
 	---@type table<string, Highlight>
@@ -87,17 +77,6 @@ config.options = {
 	---@param palette Palette
 	---@diagnostic disable-next-line: unused-local
 	before_highlight = function(group, highlight, palette) end,
-
-	---@deprecated Replaced by `options.dim_inactive_windows`
-	-- dim_nc_background = false,
-	---@deprecated Replaced by `options.enable.transparency`
-	-- disable_background = false,
-	---@deprecated Replaced by `options.highlight_groups["NormalFloat"]`
-	-- disable_float_background = false,
-	---@deprecated Replaced by `options.styles.italic`
-	-- disable_italics = false,
-	---@deprecated Replaced by `options.highlight_groups`
-	-- bold_vert_split = false
 }
 
 local function migrate(options)
